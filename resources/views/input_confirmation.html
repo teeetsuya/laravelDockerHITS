@@ -9,19 +9,9 @@
   <title>HITS! Input Confirmation</title>
 </head>
 <body class="before-login" id="wrapper">
-  <header>
-    <div id="headerborder"></div>
-    <div class="header-hidden">
-      <ul class="header-hidden-info">
-        <li class="header-hidden-info-account">こんにちはアカウントさん</li>
-        <li class="header-hidden-info-logout"><a class="header-hidden-info-logout" href="@@@">logout</a></li>
-      </ul>
-    </div>
-    <div class="menuBar">
-      <img class="logo" src="images/logo&title.png" alt="HITS!LOGO">
-      <img  class="account-picture" src="images/account-picture.png" alt="account-picture">
-    </div>
-  </header>
+  @extends('layouts.head')
+
+@extends('layouts.footer')
   <div class="body">
     <form action="###" method="POST" id="sample-work-info">
       <div class="page-top-guidence">
@@ -139,9 +129,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
     -->
 </body>
-<footer>
-  <div class="copy-right">
-    <small>Copyright &copy;HITS! All Rights Reserved.</small>
-  </div>
-</footer>
+
+
 </html>

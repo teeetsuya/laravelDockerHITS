@@ -9,15 +9,12 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
-// use App\Providers\RouteServiceProvider;
-// use Illuminate\Foundation\Auth\RegistersUsers;
-// use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
     public function create()
     {
-        return view('regist.register');
+        return view('Auth.Register');
     }
     /*
     |--------------------------------------------------------------------------
