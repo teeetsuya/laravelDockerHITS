@@ -18,12 +18,27 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
 </head>
-<body>
+<body id="wrapper">
+<header>
+    <div id="headerborder"></div>
+    <div class="header-hidden"></div>
+    <div class="menuBar">
+        <a class="navbar-brand" href="{{ url('/') }}"><img class="logo" src="/images/logo&title.png" alt="HITS!LOGO"></a>
+            <div class="welcomeAccount">
+                <p>
+                @if (Auth::check())
+                    {{ \Auth::user()->name }}さん</p>
+                @else
+                    <p>ゲストさん</p><br>
+                @endif
+            </div>
+    </div>
+</header>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -38,24 +53,36 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('ログイン') }}</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('新規登録') }}</a>
-                                </li>
-                            @endif
+                        <p>
+                            @if (Auth::check())
+                                <p><a href="/auth/logout">ログアウト</a></p>
+                            @else
+                                <p><a href="/auth/login">ログイン</a>
+                                <a href="/register">新規登録</a></p>
+                            @endif</div>
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ route('logout') }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                    MENU
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('home') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('home-nonform').submit();">
+                                        ホーム
+                                    </a>
+                                    <form id="home-nonform" action="{{ route('home') }}" method="GET" class="d-none">
+                                        @csrf
+                                    </form>
+                                    <a class="dropdown-item" href="{{ route('input') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('input-form').submit();">
+                                        情報入力
+                                    </a>
+                                    <form id="input-form" action="{{ route('input') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -63,6 +90,8 @@
                                     </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
+                                    </form>
+
                                     </form>
                                 </div>
                             </li>
@@ -74,12 +103,14 @@
 
         <main class="py-4">
             @yield('content')
+            @yield('toppageBody')
+            @yield('input')
         </main>
     </div>
-    <footer>
-  <div class="copy-right">
-    <small>Copyright &copy;HITS! All Rights Reserved.</small>
-  </div>
+<footer>
+    <div class="copy-right">
+        <small>Copyright &copy;HITS! All Rights Reserved.</small>
+    </div>
 </footer>
 </body>
 </html>

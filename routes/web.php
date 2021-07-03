@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\http\Controllers\MailController;
-
+use App\Http\Controllers\InputController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,10 +18,6 @@ Route::get('/', function () {
     return view('toppage');
 });
 
-Route::get('/toppage', function () {
-    return view('toppage');
-});
-
 Route::get('/detail', function () {
     return view('detail');
 });
@@ -34,10 +30,6 @@ Route::get('/input_confirmation', function () {
     return view('input_confirmation');
 });
 
-Route::get('/input', function () {
-    return view('input');
-});
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
@@ -45,6 +37,7 @@ Route::get('/dashboard', function () {
 // Execute index in a class defined in App\Http\Controllers\HomeController
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])
 ->name('home');
+
 
 // Route::get('auth/register', 'Auth\RegisterController@showRegistrationForm');
 
@@ -79,3 +72,8 @@ Route::POST('/auth/logout', [App\Http\Controllers\Auth\LoginController::Class, '
 
 // added in 24th May 2021 cf.https://www.youtube.com/watch?v=kWEvrHVg8kI&ab_channel=SurfsideMedia
 Route::get('/send-email',[MailController::class,'sendEmail']);
+
+Route::get('/input', [InputController::class, 'index'])
+    ->name('input');
+Route::POST('input', [InputController::class, 'index'])
+    ->name('input');

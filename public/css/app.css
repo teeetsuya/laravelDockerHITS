@@ -82,7 +82,6 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   margin-top: 0;
-  margin-bottom: 1rem;
 }
 
 abbr[title],
@@ -3973,6 +3972,7 @@ input[type=button].btn-block {
   justify-content: space-between;
 }
 .navbar-brand {
+  width: 70%;
   display: inline-block;
   padding-top: 0.32rem;
   padding-bottom: 0.32rem;
@@ -3983,6 +3983,12 @@ input[type=button].btn-block {
 }
 .navbar-brand:hover, .navbar-brand:focus {
   text-decoration: none;
+}
+.welcomeAccount {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .navbar-nav {

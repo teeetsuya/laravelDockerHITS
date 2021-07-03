@@ -34,7 +34,8 @@ header {
 
 .menuBar {
   background-color: #0099CA;
-  padding: 1%;
+  padding-right: 1%;
+  padding-left: 1%;
   display: flex;
   /* justify-content: center; */
   align-items: center;
