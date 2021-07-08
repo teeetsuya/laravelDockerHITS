@@ -54,5 +54,5 @@ $response = tap($kernel->handle(
     $request = Request::capture()
 ))->send();
 
-// tarminate 
+// tarminate
 $kernel->terminate($request, $response);
