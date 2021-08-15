@@ -83,6 +83,14 @@
                                     <form id="input-form" action="{{ route('input') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
+                                    <a class="dropdown-item" href="{{ route('detail') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('detail-form').submit();">
+                                        詳細情報
+                                    </a>
+                                    <form id="detail-form" action="{{ route('detail') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -105,6 +113,7 @@
             @yield('content')
             @yield('toppageBody')
             @yield('input')
+            @yield('detail')
         </main>
     </div>
 <footer>

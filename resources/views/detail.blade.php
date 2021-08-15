@@ -9,14 +9,12 @@
   <title>HITS! Details</title>
 </head>
 <body class="before-login" id="wrapper">
+@extends('layouts.app')
 
+@section('detail')
   <div class="body">
-    <form action="###" method="POST" id="sample-work-info">
       <div class="page-top-guidence">
-        <p class="page-top-guidence-1">営業情報をご入力ください</p>
-        <p class="page-top-guidence-2">*マークは必須項目です</p>
       </div>
-
       <div class="input-info">
         <dl class="sample-info-item">
           <dt class="sample-info-item-title">USER</dt>
@@ -113,8 +111,8 @@
           <input class="get-back-button" type="button" value="Get Back">
         </div>
       </div>
-    </form>
   </div>
+  @endsection
 
     <!-- Optional JavaScript; choose one of the two! -->
 
@@ -128,5 +126,3 @@
     -->
 </body>
 </html>
-
-@extends('layouts.app')

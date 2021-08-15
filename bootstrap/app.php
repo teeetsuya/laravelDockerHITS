@@ -53,3 +53,5 @@ $app->singleton(
 */
 
 return $app;
+
+$app->loadEnvironmentFrom('.env.' . ((getenv("ENV") ? getenv("ENV") : "local"))); 
