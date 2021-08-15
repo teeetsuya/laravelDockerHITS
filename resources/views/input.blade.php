@@ -16,30 +16,32 @@
         <p class="page-top-guidence-1">営業情報をご入力ください</p>
         <p class="page-top-guidence-2">*マークは必須項目です</p>
       </div>
+    <form action="detail.blade.php" method="POST">
+    @csrf
       <div class="user-info">
         <div class="sample-info-item">
           <dl class="sample-info-item-title">
             <dt class="sample-info-item-input">USER</dt>
             <dd class="sample-info-item-input-block">
-              <label for="user-company" class="sample-info-item-input-textbox">会社*</label><br><input type="text" class="sample-info-item-input-text" id="user-company" name="user-company" required minlength="1" maxlength="144" size="10">
+              <label for="userCompany" class="sample-info-item-input-textbox">会社*</label><br><input type="string" class="sample-info-item-input-text" id="userCompany" name="userCompany" required minlength="1" maxlength="144" size="10">
             </dd>
             <dd class="sample-info-item-input-block">
-              <label for="user-person-in-charge" class="sample-info-item-input-textbox">担当者*</label><br><input type="text" class="sample-info-item-input-text" id="user-person-in-charge" name="user-person-in-charge" required minlength="1" maxlength="144" size="10">
+              <label for="userPerson" class="sample-info-item-input-textbox">担当者*</label><br><input type="string" class="sample-info-item-input-text" id="userPerson" name="userPerson" required minlength="1" maxlength="144" size="10">
             </dd>
             <dd class="sample-info-item-input-block">
-              <label for="user-department" class="sample-info-item-input-textbox">部署</label><br><input type="text" class="sample-info-item-input-text" id="user-department" name="user-department" minlength="1" maxlength="144" size="10">
+              <label for="userDepartment" class="sample-info-item-input-textbox">部署</label><br><input type="string" class="sample-info-item-input-text" id="userDepartment" name="userDepartment" minlength="1" maxlength="144" size="10">
             </dd>
             <dd class="sample-info-item-input-block">
-              <label for="user-location" class="sample-info-item-input-textbox">拠点</label><br><input type="text" class="sample-info-item-input-text" id="user-location" name="user-location" minlength="1" maxlength="144" size="10">
+              <label for="userLocation" class="sample-info-item-input-textbox">拠点</label><br><input type="string" class="sample-info-item-input-text" id="userLocation" name="userLocation" minlength="1" maxlength="144" size="10">
             </dd>
               <dd class="sample-info-item-input-block">
-                <label for="user-address" class="sample-info-item-input-textbox">住所</label><br><input type="text" class="sample-info-item-input-text" id="user-address" name="user-address" minlength="1" maxlength="144" size="10">
+                <label for="userAddress" class="sample-info-item-input-textbox">住所</label><br><input type="string" class="sample-info-item-input-text" id="userAddress" name="userAddress" minlength="1" maxlength="144" size="10">
               </dd>
               <dd class="sample-info-item-input-block">
-                <label for="user-tel" class="sample-info-item-input-textbox">Tel</label><br><input type="tel" id="user-tel" class="sample-info-item-input-text" name="user-tel" minlength="1" maxlength="144" size="10">
+                <label for="userTel" class="sample-info-item-input-textbox">Tel</label><br><input type="tel" id="userTel" class="sample-info-item-input-text" name="userTel" minlength="1" maxlength="144" size="10">
               </dd>
               <dd class="sample-info-item-input-block">
-                <label for="user-email" class="sample-info-item-input-textbox">EMAIL</label><br><input type="email" id="user-email" class="sample-info-item-input-text" name="user-email" minlength="1" maxlength="144" size="10">
+                <label for="userEmail" class="sample-info-item-input-textbox">EMAIL</label><br><input type="email" id="userEmail" class="sample-info-item-input-text" name="userEmail" minlength="1" maxlength="144" size="10">
               </dd>
           </dl>
         </div>
@@ -48,22 +50,25 @@
           <dl class="sample-info-item-title">
             <dt class="sample-info-item-input">PRODUCT</dt>
             <dd class="sample-info-item-input-block">
-              <label for="product-use" class="sample-info-item-input-textbox">用途*</label><br><input type="text" class="sample-info-item-input-text" id="product-use" name="product-use" required minlength="1" maxlength="144" size="10">
+              <label for="productUse" class="sample-info-item-input-textbox">用途*</label><br><input type="string" class="sample-info-item-input-text" id="productUse" name="productUse" required minlength="1" maxlength="144" size="10">
             </dd>
             <dd class="sample-info-item-input-block">
-              <label for="product-product" class="sample-info-item-input-textbox">製品*</label><br><input type="text" class="sample-info-item-input-text" id="product-product" name="product-product" required minlength="1" maxlength="144" size="10">
+              <label for="Product" class="sample-info-item-input-textbox">製品*</label><br><input type="string" class="sample-info-item-input-text" id="Product" name="Product" required minlength="1" maxlength="144" size="10">
             </dd>
             <dd class="sample-info-item-input-block">
-              <label for="product-unit-price" class="sample-info-item-input-textbox">単価</label><br><input type="text" class="sample-info-item-input-text" id="product-unit-price" name="product-unit-price" minlength="1" maxlength="144" size="10">
+              <label for="productName" class="sample-info-item-input-textbox">製品名*</label><br><input type="string" class="sample-info-item-input-text" id="productName" name="productName" required minlength="1" maxlength="144" size="10">
             </dd>
             <dd class="sample-info-item-input-block">
-              <label for="product-currency" class="sample-info-item-input-textbox">通貨</label><br><input type="text" class="sample-info-item-input-text" id="product-currency" name="product-currency" minlength="1" maxlength="144" size="10">
+              <label for="productUnitPrice" class="sample-info-item-input-textbox">単価</label><br><input type="int" class="sample-info-item-input-text" id="productUnitPrice" name="productUnitPrice" minlength="1" maxlength="144" size="10">
             </dd>
             <dd class="sample-info-item-input-block">
-              <label for="product-quantity" class="sample-info-item-input-textbox">数量</label><br><input type="text" class="sample-info-item-input-text" id="product-quantity" name="product-quantity" minlength="1" maxlength="144" size="10">
+              <label for="productCurrency" class="sample-info-item-input-textbox">通貨</label><br><input type="string" class="sample-info-item-input-text" id="productCurrency" name="productCurrency" minlength="1" maxlength="144" size="10">
             </dd>
             <dd class="sample-info-item-input-block">
-              <label for="product-unit" class="sample-info-item-input-textbox">数量単位</label><br><input type="text" class="sample-info-item-input-text" id="product-unit" name="product-unit" minlength="1" maxlength="144" size="10">
+              <label for="productQuantity" class="sample-info-item-input-textbox">数量</label><br><input type="int" class="sample-info-item-input-text" id="productQuantity" name="productQuantity" minlength="1" maxlength="144" size="10">
+            </dd>
+            <dd class="sample-info-item-input-block">
+              <label for="productUnit" class="sample-info-item-input-textbox">数量単位</label><br><input type="string" class="sample-info-item-input-text" id="productUnit" name="productUnit" minlength="1" maxlength="144" size="10">
             </dd>
           </dl>
         </div>
@@ -72,28 +77,28 @@
           <dl class="sample-info-item-title">
             <dt class="sample-info-item-input">SAMPLE</dt>
             <dd class="sample-info-item-input-block">
-              <label for="sample-product-name" class="sample-info-item-input-textbox">製品名*</label><br><input type="text" class="sample-info-item-input-text" id="sample-product-name" name="sample-product-name" required minlength="1" maxlength="144" size="10">
+              <label for="sampleProductName" class="sample-info-item-input-textbox">製品名*</label><br><input type="string" class="sample-info-item-input-text" id="sampleProductName" name="sampleProductName" required minlength="1" maxlength="144" size="10">
             </dd>
             <dd class="sample-info-item-input-block">
-              <label for="sample-evaluation-schedule" class="sample-info-item-input-textbox">評価時期*</label><br><input type="text" class="sample-info-item-input-text" id="sample-evaluation-schedule" name="sample-evaluation-schedule" required minlength="1" maxlength="144" size="10">
+              <label for="sampleEvaluateSchedule" class="sample-info-item-input-textbox">評価時期*</label><br><input type="string" class="sample-info-item-input-text" id="sampleEvaluateSchedule" name="sampleEvaluateSchedule" required minlength="1" maxlength="144" size="10">
             </dd>
             <dd class="sample-info-item-input-block">
-              <label for="sample-quantity" class="sample-info-item-input-textbox">数量*</label><br><input type="text" class="sample-info-item-input-text" id="sample-quantity" name="sample-quantity" required minlength="1" maxlength="144" size="10">
+              <label for="sampleQuantity" class="sample-info-item-input-textbox">数量*</label><br><input type="int" class="sample-info-item-input-text" id="sampleQuantity" name="sampleQuantity" required minlength="1" maxlength="144" size="10">
             </dd>
             <dd class="sample-info-item-input-block">
-              <label for="sample-unit" class="sample-info-item-input-textbox">数量単位</label><br><input type="text" class="sample-info-item-input-text" id="sample-unit" name="sample-unit" minlength="1" maxlength="144" size="10">
+              <label for="sampleUnit" class="sample-info-item-input-textbox">数量単位</label><br><input type="string" class="sample-info-item-input-text" id="sampleUnit" name="sampleUnit" minlength="1" maxlength="144" size="10">
             </dd>
             <dd class="sample-info-item-input-block">
-              <label for="sample-shape" class="sample-info-item-input-textbox">形状</label><br><input type="text" class="sample-info-item-input-text" id="sample-shape" name="sample-shape" minlength="1" maxlength="144" size="10">
+              <label for="sampleShape" class="sample-info-item-input-textbox">形状</label><br><input type="string" class="sample-info-item-input-text" id="sampleShape" name="sampleShape" minlength="1" maxlength="144" size="10">
             </dd>
             <dd class="sample-info-item-input-block">
-              <label for="sample-purchase-price" class="sample-info-item-input-textbox">仕入額</label><br><input type="text" class="sample-info-item-input-text" id="sample-purchase-price" name="sample-purchase-price" minlength="1" maxlength="144" size="10">
+              <label for="samplePurchasePrice" class="sample-info-item-input-textbox">仕入額</label><br><input type="int" class="sample-info-item-input-text" id="samplePurchasePrice" name="samplePurchasePrice" minlength="1" maxlength="144" size="10">
             </dd>
             <dd class="sample-info-item-input-block">
-              <label for="sample-selling-price" class="sample-info-item-input-textbox">販売額</label><br><input type="text" class="sample-info-item-input-text" id="sample-selling-price" name="sample-selling-price" minlength="1" maxlength="144" size="10">
+              <label for="sampleSellPrice" class="sample-info-item-input-textbox">販売額</label><br><input type="int" class="sample-info-item-input-text" id="sampleSellPrice" name="sampleSellPrice" minlength="1" maxlength="144" size="10">
             </dd>
             <dd class="sample-info-item-input-block">
-              <label for="sample-assessment" class="sample-info-item-input-textbox">評価額</label><br><input type="text" class="sample-info-item-input-text" id="sample-assessment" name="sample-assessment" minlength="1" maxlength="144" size="10">
+              <label for="sampleAssesment" class="sample-info-item-input-textbox">評価額</label><br><input type="int" class="sample-info-item-input-text" id="sampleAssesment" name="sampleAssesment" minlength="1" maxlength="144" size="10">
             </dd>
           </dl>
         </div>
@@ -102,19 +107,19 @@
           <dl class="sample-info-item-title">
             <dt class="sample-info-item-input">PROCEED</dt>
             <dd class="sample-info-item-input-block">
-              <label for="proceed-update-date" class="sample-info-item-input-textbox">更新日*</label><br><input type="date" id="proceed-update-date" name="proceed-update-date" required minlength="1" maxlength="144">
+              <label for="proceedUpdateDate" class="sample-info-item-input-textbox">更新日*</label><br><input type="date" id="proceedUpdateDate" name="proceedUpdateDate" required minlength="1" maxlength="144">
             </dd>
             <dd class="sample-info-item-input-block">
-              <label for="proceed-update-schedule" class="sample-info-item-input-textbox">更新時期*</label><br><input type="date" id="proceed-update-schedule" name="proceed-update-schedule" required minlength="1" maxlength="144" >
+              <label for="proceedUpdateSchedule" class="sample-info-item-input-textbox">更新時期*</label><br><input type="date" id="proceedUpdateSchedule" name="proceedUpdateSchedule" required minlength="1" maxlength="144" >
             </dd>
             <dd class="sample-info-item-input-block">
-              <label for="proceed-person-fill-out" class="sample-info-item-input-textbox">記入者*</label><br><input type="text" class="sample-info-item-input-text" id="proceed-person-fill-out" name="proceed-person-fill-out" required minlength="1" maxlength="144">
+              <label for="proceedPerson" class="sample-info-item-input-textbox">記入者*</label><br><input type="string" class="sample-info-item-input-text" id="proceedPerson" name="proceedPerson" required minlength="1" maxlength="144">
             </dd>
             <dd class="sample-info-item-input-block">
-              <label for="proceed-estimated-shift-massproduction" class="sample-info-item-input-textbox">見込時期</label><br><input type="month" id="proceed-estimated-shift-massproduction" name="proceed-estimated-shift-massproduction" minlength="1" maxlength="144" size="10">
+              <label for="proceedEstimatedMP" class="sample-info-item-input-textbox">見込時期</label><br><input type="month" id="proceedEstimatedMP" name="proceedEstimatedMP" minlength="1" maxlength="144" size="10">
             </dd>
             <dd class="sample-info-item-input-block">
-              <label for="sample-reliability" class="sample-info-item-input-textbox">確度</label><br><input type="text" class="sample-info-item-input-text" id="sample-reliability" name="sample-reliability" minlength="1" maxlength="144" size="10">
+              <label for="proceedAccuracy" class="sample-info-item-input-textbox">確度</label><br><input type="string" class="sample-info-item-input-text" id="proceedAccuracy" name="proceedAccuracy" minlength="1" maxlength="144" size="10">
             </dd>
           </dl>
         </div>
@@ -123,37 +128,35 @@
           <dl class="sample-info-item-title">
             <dt class="sample-info-item-input">RELATIONS</dt>
             <dd class="sample-info-item-input-block">
-              <label for="relations-team" class="sample-info-item-input-textbox">チーム</label><br><input type="text" class="sample-info-item-input-text" id="relations-team" name="relations-team" minlength="1" maxlength="144" size="10">
+              <label for="relationsTeam" class="sample-info-item-input-textbox">チーム</label><br><input type="string" class="sample-info-item-input-text" id="relationsTeam" name="relationsTeam" minlength="1" maxlength="144" size="10">
             </dd>
             <dd class="sample-info-item-input-block">
-              <label for="relations-internal-others" class="sample-info-item-input-textbox">社内：その他</label><br><input type="text" class="sample-info-item-input-text" id="relations-internal-others" name="relations-internal-others" minlength="1" maxlength="144" size="10">
+              <label for="relationsInternalOthers" class="sample-info-item-input-textbox">社内：その他</label><br><input type="string" class="sample-info-item-input-text" id="relationsInternalOthers" name="relationsInternalOthers" minlength="1" maxlength="144" size="10">
             </dd>
             <dd class="sample-info-item-input-block">
-              <label for="relations-external-supplier" class="sample-info-item-input-textbox">社外：仕入先</label><br><input type="text" class="sample-info-item-input-text" id="relations-external-supplier" name="relations-external-supplier" minlength="1" maxlength="144" size="10">
+              <label for="relationsSupplier" class="sample-info-item-input-textbox">社外：仕入先</label><br><input type="string" class="sample-info-item-input-text" id="relationsSupplier" name="relationsSupplier" minlength="1" maxlength="144" size="10">
             </dd>
             <dd class="sample-info-item-input-block">
-              <label for="relations-external-user" class="sample-info-item-input-textbox">社外：得意先</label><br><input type="text" class="sample-info-item-input-text" id="relations-external-user" name="relations-external-user" minlength="1" maxlength="144" size="10">
+              <label for="relationsCustomer" class="sample-info-item-input-textbox">社外：得意先</label><br><input type="string" class="sample-info-item-input-text" id="relationsCustomer" name="relationsCustomer" minlength="1" maxlength="144" size="10">
             </dd>
             <dd class="sample-info-item-input-block">
-              <label for="relations-external-other" class="sample-info-item-input-textbox">社外：その他</label><br><input type="text" class="sample-info-item-input-text" id="relations-external-other" name="relations-external-other" minlength="1" maxlength="144" size="10">
+              <label for="relations-external-other" class="sample-info-item-input-textbox">社外：その他</label><br><input type="string" class="sample-info-item-input-text" id="relations-external-other" name="relations-external-other" minlength="1" maxlength="144" size="10">
             </dd>
             <dd class="sample-info-item-input-block">
-              <label for="relations-history-sharing-info" class="sample-info-item-input-textbox">情報共有履歴</label><br><input type="date" id="relations-history-sharing-info" name="relations-history-sharing-info" minlength="1" maxlength="144" size="10">
+              <label for="relationsSharedHistory" class="sample-info-item-input-textbox">情報共有履歴</label><br><input type="date" id="relationsSharedHistory" name="relationsSharedHistory" minlength="1" maxlength="144" size="10">
             </dd>
           </dl>
         </div>
-
         <div class="sample-info-item">
           <dt class="sample-info-item-input">コメント</dt>
           <dd>
-           <input type="sample-input-comment" id="sample-input-comment" name="sample-input-comment" minlength="0" maxlength="2000" width="700">
+           <input type="string" id="sampleComment" name="sampleComment" minlength="0" maxlength="2000" width="700">
         </dd>
         </div>
-
         <div class="sample-info-item">
           <dt class="sample-info-item-input">写真</dt>
           <dd class="sample-info-item-input-block">
-            <input type="image" id="sample-related-picture" name="sample-related-picture" required alt="sample-related-picture">
+            <input type="image" id="samplePicture" name="samplePicture" required alt="samplePicture">
           </dd>
         </div>
 
